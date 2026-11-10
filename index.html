@@ -15,7 +15,6 @@
     align-items: center;
     font-family: 'Segoe UI', Arial, sans-serif;
     padding: 20px;
-    /* Горизонтальные полосы: оранжевый, белый, оранжевый, белый */
     background: linear-gradient(
       to bottom,
       #ff7f00 0%, #ff7f00 25%,
@@ -25,16 +24,16 @@
     );
   }
 
-  /* --- КАРТОЧКА (Скругленная, без обводки) --- */
+  /* --- КАРТОЧКА --- */
   .card {
     background: #ffffff;
-    border-radius: 30px; /* Большое скругление */
+    border-radius: 30px; 
     padding: 40px 30px;
     width: 100%;
     max-width: 400px;
     text-align: center;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15); /* Мягкая тень */
-    border: none; /* Убрана обводка */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15); 
+    border: none; 
     position: relative;
     z-index: 2;
   }
@@ -46,7 +45,7 @@
     margin: 0 auto 20px;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid #ff7f00; /* Оранжевая рамка аватарки */
+    border: 4px solid #ff7f00; 
     background: #f0f0f0;
     transition: transform 0.3s ease;
   }
@@ -74,8 +73,8 @@
     align-items: center;
     justify-content: space-between;
     padding: 14px 20px;
-    border-radius: 16px; /* Скругленные кнопки */
-    background: #f7f7f7; /* Светло-серый фон кнопки */
+    border-radius: 16px; 
+    background: #f7f7f7; 
     color: #333;
     text-decoration: none;
     font-weight: 500;
@@ -85,9 +84,8 @@
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
   }
 
-  /* ЭФФЕКТ ПРИ НАЖАТИИ */
   .link-btn:hover, .link-btn:active {
-    background: #ff7f00; /* Оранжевый при клике */
+    background: #ff7f00; 
     color: #ffffff;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(255, 127, 0, 0.4);
@@ -121,7 +119,6 @@
     color: #fff;
   }
 
-  /* --- ВСПЛЫВАШКА --- */
   .copy-alert {
     position: fixed;
     bottom: 30px;
@@ -147,14 +144,12 @@
 <body>
 
 <div class="card">
-  <!-- Аватарка -->
   <img src="https://i.postimg.cc/K883xWbw/1249.jpg" alt="Аватарка" class="avatar">
   
-  <!-- Заголовок -->
   <h1>((()68)))()),</h1>
 
   <div class="links">
-    <!-- 1. TELEGRAM -->
+    <!-- TELEGRAM -->
     <div class="link-btn tg" onclick="copyText('@hikk2n', this)">
       <span class="platform">
         <img src="https://i.postimg.cc/18whMbBM/1160.png" alt="Telegram" class="icon">
@@ -163,7 +158,7 @@
       <span class="value">@hikk2n</span>
     </div>
 
-    <!-- 2. DISCORD -->
+    <!-- DISCORD -->
     <div class="link-btn ds" onclick="copyText('Spec_71782', this)">
       <span class="platform">
         <img src="https://i.postimg.cc/9DZ51sbB/1161.webp" alt="Discord" class="icon">
@@ -172,13 +167,13 @@
       <span class="value">Spec_71782</span>
     </div>
 
-    <!-- 3. TIKTOK -->
-    <a href="https://tiktok.com/@dt4me" target="_blank" class="link-btn tt">
+    <!-- TIKTOK (ИСПРАВЛЕНО) -->
+    <a href="https://tiktok.com/@dt4me84" target="_blank" class="link-btn tt">
       <span class="platform">
         <img src="https://i.postimg.cc/sBJFCStJ/1173.png" alt="TikTok" class="icon icon-tiktok">
         TikTok
       </span>
-      <span class="value">@dt4me</span>
+      <span class="value">@dt4me84</span>
     </a>
   </div>
 </div>
