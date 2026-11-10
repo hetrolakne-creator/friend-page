@@ -7,42 +7,34 @@
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   
-  /* --- КОНТРАСТНЫЙ ФОН (Заводной апельсин) --- */
+  /* --- СТАТИЧНЫЙ ГОРИЗОНТАЛЬНЫЙ ФОН --- */
   body {
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Impact', 'Arial Black', sans-serif; /* Более дерзкий шрифт */
+    font-family: 'Segoe UI', Arial, sans-serif;
     padding: 20px;
-    /* Резкие полосы: оранжевый, белый, оранжевый, белый */
-    background: repeating-linear-gradient(
-      45deg,
-      #ff6600,
-      #ff6600 50px,
-      #ffffff 50px,
-      #ffffff 100px
+    /* Горизонтальные полосы: оранжевый, белый, оранжевый, белый */
+    background: linear-gradient(
+      to bottom,
+      #ff7f00 0%, #ff7f00 25%,
+      #ffffff 25%, #ffffff 50%,
+      #ff7f00 50%, #ff7f00 75%,
+      #ffffff 75%, #ffffff 100%
     );
-    background-size: 200% 200%;
-    animation: orangeClockwork 15s linear infinite; /* Медленное движение полос */
-    overflow-x: hidden;
   }
 
-  @keyframes orangeClockwork {
-    0% { background-position: 0% 0%; }
-    100% { background-position: 100% 100%; }
-  }
-
-  /* --- КАРТОЧКА --- */
+  /* --- КАРТОЧКА (Скругленная, без обводки) --- */
   .card {
     background: #ffffff;
-    border: 4px solid #000; /* Жесткая черная рамка */
-    border-radius: 0px; /* Убираем скругления для строгости */
+    border-radius: 30px; /* Большое скругление */
     padding: 40px 30px;
     width: 100%;
     max-width: 400px;
     text-align: center;
-    box-shadow: 12px 12px 0px rgba(0, 0, 0, 1); /* Резкая тень */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15); /* Мягкая тень */
+    border: none; /* Убрана обводка */
     position: relative;
     z-index: 2;
   }
@@ -54,30 +46,26 @@
     margin: 0 auto 20px;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid #000;
-    background: #eee;
-    box-shadow: 4px 4px 0px #ff6600; /* Оранжевая тень */
+    border: 4px solid #ff7f00; /* Оранжевая рамка аватарки */
+    background: #f0f0f0;
     transition: transform 0.3s ease;
   }
 
   .avatar:hover {
-    transform: scale(1.05) rotate(-5deg); /* Легкий наклон */
+    transform: scale(1.05);
   }
 
   h1 {
-    color: #000;
-    font-size: 28px;
+    color: #333;
+    font-size: 26px;
     margin-bottom: 25px;
     letter-spacing: 1px;
-    text-transform: uppercase;
-    /* Оранжевый текст с черной обводкой */
-    text-shadow: 2px 2px 0px #ff6600, -1px -1px 0px #000; 
   }
 
   .links {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 12px;
   }
 
   /* --- КНОПКИ --- */
@@ -86,24 +74,23 @@
     align-items: center;
     justify-content: space-between;
     padding: 14px 20px;
-    border-radius: 0; /* Квадратные кнопки */
-    background: #ffffff;
-    color: #000;
+    border-radius: 16px; /* Скругленные кнопки */
+    background: #f7f7f7; /* Светло-серый фон кнопки */
+    color: #333;
     text-decoration: none;
-    font-weight: bold;
-    font-size: 16px;
-    transition: all 0.2s ease;
-    border: 3px solid #000;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: none;
     cursor: pointer;
-    box-shadow: 4px 4px 0px #000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
   }
 
   /* ЭФФЕКТ ПРИ НАЖАТИИ */
   .link-btn:hover, .link-btn:active {
-    background: #ff6600; 
+    background: #ff7f00; /* Оранжевый при клике */
     color: #ffffff;
-    transform: translate(2px, 2px); /* Сдвиг при нажатии */
-    box-shadow: 2px 2px 0px #000;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 127, 0, 0.4);
   }
 
   .link-btn .platform {
@@ -122,16 +109,12 @@
   .link-btn .icon-tiktok {
     width: 32px;   
     height: 32px;
-    background: #000; /* Для ТикТока сделаем черный фон иконке */
-    border-radius: 4px;
-    padding: 2px;
   }
 
   .link-btn .value {
-    color: #555;
+    color: #888;
     font-size: 14px;
     transition: color 0.3s;
-    font-family: 'Arial', sans-serif;
   }
 
   .link-btn:hover .value {
@@ -144,19 +127,15 @@
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%) translateY(100px);
-    background: #ff6600;
+    background: #ff7f00;
     color: #fff;
     padding: 12px 24px;
-    border-radius: 0;
-    border: 3px solid #000;
+    border-radius: 20px;
     font-weight: bold;
-    font-family: 'Impact', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 1px;
     transition: all 0.3s ease;
     opacity: 0;
     z-index: 10;
-    box-shadow: 5px 5px 0px #000;
+    box-shadow: 0 5px 20px rgba(255, 127, 0, 0.4);
   }
   
   .copy-alert.show {
