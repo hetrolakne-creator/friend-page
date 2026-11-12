@@ -26,7 +26,7 @@
   .card {
     background: #ffffff;
     border-radius: 30px; 
-    padding: 40px 30px 25px 30px;
+    padding: 40px 30px;
     width: 100%;
     max-width: 400px;
     text-align: center;
@@ -116,29 +116,6 @@
     color: #fff;
   }
 
-  /* --- СЕКРЕТНОЕ СЕРДЕЧКО --- */
-  .easter-egg {
-    display: inline-block;
-    margin-top: 25px;
-    font-size: 18px;
-    color: #ff7f00; 
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.4s ease;
-    user-select: none;
-    
-    /* Делаем невидимым, но оставляем место для клика */
-    opacity: 0; 
-    pointer-events: auto;
-  }
-
-  /* Класс, который мы будем добавлять через JS при клике */
-  .easter-egg.reveal {
-    opacity: 1;
-    transform: scale(1.2) rotate(-10deg);
-    text-shadow: 0 0 15px rgba(255, 127, 0, 0.6);
-  }
-
   .copy-alert {
     position: fixed;
     bottom: 40px; 
@@ -171,6 +148,7 @@
   <h1>((()68)))()),</h1>
 
   <div class="links">
+    <!-- TELEGRAM -->
     <div class="link-btn tg" onclick="copyText('@hikk2n', this)">
       <span class="platform">
         <img src="https://i.postimg.cc/18whMbBM/1160.png" alt="Telegram" class="icon">
@@ -179,6 +157,7 @@
       <span class="value">@hikk2n</span>
     </div>
 
+    <!-- DISCORD -->
     <div class="link-btn ds" onclick="copyText('Spec_71782', this)">
       <span class="platform">
         <img src="https://i.postimg.cc/9DZ51sbB/1161.webp" alt="Discord" class="icon">
@@ -187,6 +166,7 @@
       <span class="value">Spec_71782</span>
     </div>
 
+    <!-- TIKTOK -->
     <a href="https://tiktok.com/@dt4me84" target="_blank" class="link-btn tt">
       <span class="platform">
         <img src="https://i.postimg.cc/sBJFCStJ/1173.png" alt="TikTok" class="icon icon-tiktok">
@@ -195,16 +175,11 @@
       <span class="value">@dt4me84</span>
     </a>
   </div>
-
-  <!-- Пасхалка с ID для скрипта -->
-  <div class="easter-egg" id="secretHeart" title="Секретик">made with &lt;3</div>
-
 </div>
 
 <div class="copy-alert" id="alert">Скопировано</div>
 
 <script>
-  // Скрипт для копирования
   function copyText(text, element) {
     navigator.clipboard.writeText(text).then(() => {
       const alertBox = document.getElementById('alert');
@@ -222,19 +197,6 @@
       console.error('Ошибка копирования: ', err);
     });
   }
-
-  // Скрипт для пасхалки
-  const heart = document.getElementById('secretHeart');
-  
-  // При клике/касании
-  heart.addEventListener('click', () => {
-    heart.classList.add('reveal'); // Показываем сердечко
-    
-    // Через 2 секунды снова прячем
-    setTimeout(() => {
-      heart.classList.remove('reveal');
-    }, 2000);
-  });
 </script>
 
 </body>
