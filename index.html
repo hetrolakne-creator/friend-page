@@ -28,7 +28,7 @@
   .card {
     background: #ffffff;
     border-radius: 30px; 
-    padding: 40px 30px;
+    padding: 40px 30px 25px 30px; /* Чуть уменьшил нижний отступ для сердечка */
     width: 100%;
     max-width: 400px;
     text-align: center;
@@ -119,26 +119,24 @@
     color: #fff;
   }
 
-  .copy-alert {
-    position: fixed;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%) translateY(100px);
-    background: #ff7f00;
-    color: #fff;
-    padding: 12px 24px;
-    border-radius: 20px;
+  /* --- ПАСХАЛОЧКА (СЕРДЕЧКО) --- */
+  .easter-egg {
+    display: inline-block;
+    margin-top: 25px;
+    font-size: 14px;
+    color: #ccc; /* Серый цвет, чтобы не бросалось в глаза */
     font-weight: bold;
+    cursor: pointer;
     transition: all 0.3s ease;
-    opacity: 0;
-    z-index: 10;
-    box-shadow: 0 5px 20px rgba(255, 127, 0, 0.4);
+    user-select: none;
   }
-  
-  .copy-alert.show {
-    transform: translateX(-50%) translateY(0);
-    opacity: 1;
+
+  .easter-egg:hover, .easter-egg:active {
+    color: #ff7f00; /* Загорается оранжевым */
+    transform: scale(1.3) rotate(-10deg); /* Немного увеличивается и наклоняется */
+    text-shadow: 0 0 10px rgba(255, 127, 0, 0.5);
   }
+
 </style>
 </head>
 <body>
@@ -167,7 +165,7 @@
       <span class="value">Spec_71782</span>
     </div>
 
-    <!-- TIKTOK (ИСПРАВЛЕНО) -->
+    <!-- TIKTOK -->
     <a href="https://tiktok.com/@dt4me84" target="_blank" class="link-btn tt">
       <span class="platform">
         <img src="https://i.postimg.cc/sBJFCStJ/1173.png" alt="TikTok" class="icon icon-tiktok">
@@ -176,6 +174,10 @@
       <span class="value">@dt4me84</span>
     </a>
   </div>
+
+  <!-- ТА САМАЯ ПАСХАЛОЧКА -->
+  <div class="easter-egg" title="Секретик">made with &lt;3</div>
+
 </div>
 
 <div class="copy-alert" id="alert">Скопировано! ✅</div>
